@@ -59,9 +59,8 @@ u8 is_user_input_button(u8 index)
   return index > 0 && index < 9;
 }
 
-void update_temp_state()
+void run_simulation()
 {
-  // for (u8 i = 0; i < BUTTON_COUNT - 10; i++)
   for (u8 y = 1; y < 9; y++)
   {
     u8 last_row_value = 0;
@@ -157,7 +156,7 @@ void copy_temp_to_display()
 
 void full_update()
 {
-  update_temp_state();
+  run_simulation();
   copy_temp_to_display();
   display_current_state();
 }
